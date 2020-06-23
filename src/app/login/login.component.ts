@@ -43,18 +43,22 @@ export class LoginComponent implements OnInit {
   token:string="a";
   message;mismatch;
   userLogin(){
-    console.log(this.username)
-    console.log(this.password)
     this.userdata.checkLogin(this.username,this.password).subscribe(Response =>{
       this.token = Response['token'];
-      sessionStorage.setItem("username",Response['username'])
       console.log(Response)
-      console.log(this.token)
-      console.log(sessionStorage.getItem("username"))
+      sessionStorage.setItem("username",Response['username'])
+      sessionStorage.setItem("firstName",Response['firstName'])
+      sessionStorage.setItem("lastName",Response['lastName'])
       if(this.token.length>0)
       {
-        this.userdata.setLoggedIn(true);
+        // this.userdata.setLoggedIn();
+        // sessionStorage.setItem('')
         this.route.navigate(['/userscreen']);
+      }
+    },error=>{
+      if(error.status==422)
+      {
+        this.token="";
       }
     })
   }

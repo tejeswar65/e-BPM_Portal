@@ -2,52 +2,64 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
-  z-index: 100; /* Behind the navbar */
-  padding: 68px 0 0; /* Height of navbar */
-  background-color: white;
-  box-shadow:  4px 0px 6px rgba(0, 0, 0, 0.1);
+  left: 0; /* Behind the navbar */
+  padding: 0px 0 0; /* Height of navbar */
+  background-image:  url(../../assets/Images/gradient.jpg);
+  background-size: 1080px;
+  background-position: 270px 1000px;
 }
-
-.navbar{
-  box-shadow:  0px 2px 6px rgba(0, 0, 0, 0.1);
+.nav-1{
+  background-color: white;
+  color: #333333;
+  min-height: 64px;
+  box-shadow:  -2px -7px 16px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar-sticky {
   position: relative;
-  top: 0;
+  top: 10px;
   height: calc(100vh - 48px);
-  padding-top: .5rem;
   overflow-x: hidden;
   overflow-y: auto;
    /* Scrollable contents if viewport is shorter than content. */
 }
 
+.card{
+  width: 14rem;
+  border:0px;
+  margin-left: 16px;
+  background-color: transparent;
+  border-radius: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-body{
+  padding-bottom: 10px;
+}
+
 .nav-pills .nav-link.active{
-  color:#050505;
-  background-color: #007bff30;
+  color:white;
+  background-color: transparent;
 }
 
 .nav-link{
-  display: bl;
+  display: block;
   font-weight: 600;
   margin-right: 10px;
   padding-left: 40px;
   padding-right: 10px;
-  color: #333333;
+  color: rgba(255, 255, 255, 0.72);
 }
-
-.nav-pills .nav-link{
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
 
 .btn-1{
   color: #424242;
   border-color: #424242;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+.btn-1:hover{
+  color: #ffffff;
+  background-color: #424242;
 }
  .btn-2{
    background-color: transparent;
@@ -57,10 +69,16 @@
    border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
  }
+.btn-3{
+  border: none;
+  margin-right: 10px;
+  border-radius: 20px;
+}
 
  .btn-secondary.active{
    background-color: white!important;
    color:#424242 !important;
+   height:auto;
    box-shadow:  0px -1px 6px rgba(0, 0, 0, 0.1);
  }
  .btn-secondary.active:focus{
@@ -85,6 +103,76 @@ td{
   padding-top: 10px;
 }
 
+.taskboard{
+  margin: 10px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: calc(100vh - 162px);
+}
+.taskboard-card{
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+  width: 278px;
+  display: inline-block;
+  background-color: white;
+  box-shadow:  0px 2px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  white-space: normal;
+  max-height: 100%;
+  vertical-align: top;
+}
+.taskboard-head{
+  font-weight: bold;
+}
+.taskboard-task-title{
+  font-size: 14px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgb(210, 210, 210);
+}
+.taskboard-task-created{
+  margin-top: 4px;
+  font-size: 10px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.4);
+}
+.taskboard-task-description{
+  margin-top: 8px;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.taskboard-task{
+  margin-top: 8px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+.imgcontainer{
+  width: 160px;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 auto;
+}
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.imgcontainer img {
+  width: 160px;
+  margin: 0 auto;
+  vertical-align: middle;
+  transform: translateY(-25%);
+}
 
 
 

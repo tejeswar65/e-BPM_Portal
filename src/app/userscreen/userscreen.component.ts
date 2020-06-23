@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserdataService } from '../services/userdata.service';
 import { TaskdataService } from '../services/taskdata.service';
 import { Router } from '@angular/router';
+import * as Feather from 'feather-icons';
 
 @Component({
   selector: 'app-userscreen',
@@ -16,6 +17,10 @@ export class UserscreenComponent implements OnInit {
     this.getMyTasks();
     this.getMyGroupTasks();
     this.getMyReporteesTasks();
+
+  }
+  ngAfterViewInit() {
+    Feather.replace();
   }
   taskid;taskTitle;taskDesription;assignedType;assignedTo;
   message;
@@ -31,7 +36,10 @@ export class UserscreenComponent implements OnInit {
     })
   }
   username= sessionStorage.getItem("username")
+  firstName= sessionStorage.getItem("firstName")
+  lastName= sessionStorage.getItem("lastName")
   myTasks;myGroupTasks;myReporteesTasks;
+  viewTask;
   getMyTasks(){
     this.tasks.myTasks(this.username).subscribe(Response=>{
       this.myTasks= Response;
@@ -47,10 +55,19 @@ export class UserscreenComponent implements OnInit {
       this.myReporteesTasks= Response;
     })
   }
+  getTask(id: string){
+    this.tasks.getTaskById(id).subscribe(Response=>{
+      this.viewTask=Response;
+    })
+  }
   signOut(){
     sessionStorage.clear();
     console.log(sessionStorage)
-    this.userdata.setLoggedIn(false);
     this.route.navigate(['/login']);
+  }
+  reloadTasks(){
+    this.getMyTasks();
+    this.getMyGroupTasks();
+    this.getMyReporteesTasks();
   }
 }

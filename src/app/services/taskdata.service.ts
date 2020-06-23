@@ -32,4 +32,7 @@ export class TaskdataService {
     myReporteesTasks(username:string){
       return this.http.get(`http://127.0.0.1:5000/myReporteesTasks?username=${username}`)
     }
+    getTaskById(id: string){
+      return this.http.get(`http://127.0.0.1:5000/taskById?id=${id}`)
+    }
 }

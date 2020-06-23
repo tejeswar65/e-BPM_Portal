@@ -33,11 +33,15 @@ export class UserdataService {
     }
     );
   }
-  logInStatus = false;
-  setLoggedIn(status: boolean){
-    this.logInStatus = status;
-  }
-  getLoggedIn(){
-    return this.logInStatus;
-  }
+  // logInStatus = false;
+  // setLoggedIn(){
+  //   // this.logInStatus = status;
+  //   if(sessionStorage.getItem("username"))
+  //   {
+  //     return true
+  //   }
+  // }
+  // // getLoggedIn(){
+
+  // // }
 }
